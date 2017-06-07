@@ -1,0 +1,10 @@
+4UU, 6U, 3UUB, 5UR
+A Link to the Past, The Legend of Zelda, Skyward Sword, Ocarina of Time
+Ravnica, Naya, Kaladesh, Innistrad
+6, 9, 27, 16
+1d8, 2d6, 1d6, 1d10
+10, 256, 32768, Infinity
+Kitchen Finks - Viscera Seer - Melira: Sylvok Outcast, Triskelion - Mikaeus: The Unhallowed, Saheeli Rai - Felidar Guardian, Deadeye Navigator - Palinchron
+252, 356, 151, 769
+Superman, Mickey Mouse, Spiderman, Astro Boy
+git gud, git gone, git stash, git got
