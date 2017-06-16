@@ -21,14 +21,14 @@ public class Quiz {
 
         FileReader fr = new FileReader();
         if (difficulty == 0) {
-            questions = fr.getArray("questions-easy.txt");
-            options = fr.getAnswerArray("options-easy.txt");
-            correctAnswers = fr.getArray("answers-easy.txt");
+            questions = fr.getArray("resources/easy/questions.txt");
+            options = fr.getAnswerArray("resources/easy/options.txt");
+            correctAnswers = fr.getArray("resources/easy/answers.txt");
             QuestionMaster qm = new QuestionMaster(questions, options, correctAnswers);
         } else if (difficulty == 1){
-            questions = fr.getArray("questions-hard.txt");
-            options = fr.getAnswerArray("options-hard.txt");
-            correctAnswers = fr.getArray("answers-hard.txt");
+            questions = fr.getArray("resources/hard/questions.txt");
+            options = fr.getAnswerArray("resources/hard/options.txt");
+            correctAnswers = fr.getArray("resources/hard/answers.txt");
             QuestionMaster qm = new QuestionMaster(questions, options, correctAnswers);
         } else {
             System.exit(0);
