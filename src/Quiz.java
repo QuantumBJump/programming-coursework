@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 /**
- * Created by t.stevens on 31/05/2017.
+ * Created by Quinn Stevens on 31/05/2017.
  */
 public class Quiz {
     static int score = 0;

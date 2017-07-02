@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * Created by t.stevens on 31/05/2017.
+ * Created by Quinn Stevens on 31/05/2017.
  */
 public class FileReader {
     public String[][] getAnswerArray(String filename) {
@@ -14,9 +14,6 @@ public class FileReader {
         String[] splitText;
         for (int i = 0; i < inputArray.length; i++) {
             splitText = inputArray[i].split(", ");
-//            for (int j = 0; j < splitText.length; j++) {
-//                System.out.println(splitText[j]);
-//            }
 
             for (int j = 0; j < splitText.length; j++) {
                 outputArray[i][j] = splitText[j];

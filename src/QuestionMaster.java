@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Stack;
 
 /**
- * Created by t.stevens on 31/05/2017.
+ * Created by Quinn Stevens on 31/05/2017.
  */
 public class QuestionMaster implements ActionListener {
     JFrame frame;
@@ -20,7 +20,7 @@ public class QuestionMaster implements ActionListener {
 
     boolean skipAllowed;
     Stack skipped = new Stack();
-    Stack incorrect = new Stack();
+    int incorrectAnswers = 0;
 
     String report = "";
 
@@ -80,7 +80,6 @@ public class QuestionMaster implements ActionListener {
         frame.add(controlPanel, BorderLayout.SOUTH);
         frame.pack();
         frame.setVisible(true);
-        System.out.println(answers[questionNum]);
     }
 
     private void nextQuestion() {
@@ -111,19 +110,23 @@ public class QuestionMaster implements ActionListener {
     }
 
     private void updateReport() {
-        report += "\nQ: " + questions[questionNum] + "\nCorrect answer: " + answers[questionNum] + "\n";
+        incorrectAnswers += 1;
+        report += "\n\nQ: " + questions[questionNum] + "\nCorrect answer: " + answers[questionNum] + "\n";
     }
 
     private void endQuiz() {
-        JOptionPane.showMessageDialog(null, "You have scored " + score + " out of 10.\nThis is equivalent to " + Math.round(score/10.0*100) + "%\nWell done!" + report);
+        if (incorrectAnswers != 0) {
+            report = "\n\nYou got " + incorrectAnswers + " wrong:" + report;
+        }
+
+        JOptionPane.showMessageDialog(null, "You have scored " + score + " out of 10.\n" +
+                "This is equivalent to " + Math.round(score/10.0*100) + "%\nWell done!" + report);
     }
 
     private void checkAnswer() {
         if (Objects.equals(currentAnswer, answers[questionNum])) {
             score ++;
-            System.out.println(score);
         } else {
-            System.out.println(currentAnswer + " does not equal " + answers[questionNum]);
             updateReport();
         }
     }
@@ -170,7 +173,6 @@ public class QuestionMaster implements ActionListener {
             nextQuestion();
         } else {
             currentAnswer = command;
-            System.out.println(currentAnswer);
         }
     }
 }
